@@ -5,7 +5,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// TODO: gate this layout behind Supabase auth once configured.
+// Auth is enforced in app/admin/(dashboard)/layout.tsx, not here, so that
+// /admin/login can render without redirecting to itself.
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return <div className="min-h-screen">{children}</div>;
 }
