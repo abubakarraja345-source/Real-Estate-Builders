@@ -1,0 +1,2 @@
+-- Seed data will be added once the schema (supabase/migrations/) and real
+-- business data are available. Intentionally empty for now.
