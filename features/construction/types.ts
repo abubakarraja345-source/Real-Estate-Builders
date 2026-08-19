@@ -1,1 +1,1 @@
-export type { ConstructionProject, ConstructionProjectStatus } from "@/types/construction";
+export type { ConstructionProject, ConstructionStatus } from "@/types/construction";
