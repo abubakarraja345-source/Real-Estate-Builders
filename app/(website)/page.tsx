@@ -1,47 +1,52 @@
-import Link from "next/link";
-import {
-  BRAND_QUICK_ACTIONS,
-  CORE_SERVICES,
-  SITE_BRAND,
-  SITE_LOCATION,
-  SITE_SLOGAN,
-  SITE_TAGLINE,
-} from "@/lib/constants/site";
+import type { Metadata } from "next";
+import { Hero } from "@/components/website/hero";
+import { TrustStrip } from "@/components/website/trust-strip";
+import { FeaturedProperties } from "@/components/website/featured-properties";
+import { PropertySearch } from "@/components/website/property-search";
+import { WhyRayyan } from "@/components/website/why-rayyan";
+import { ConstructionServices } from "@/components/website/construction-services";
+import { FeaturedProjects } from "@/components/website/featured-projects";
+import { AboutSplit } from "@/components/website/about-split";
+import { HowItWorks } from "@/components/website/how-it-works";
+import { LocalArea } from "@/components/website/local-area";
+import { BlogInsights } from "@/components/website/blog-insights";
+import { CtaSection } from "@/components/website/cta-section";
+import { SITE_LOCATION } from "@/lib/constants/site";
+
+const TITLE = "Rayyan Real Estate & Builders | Real Estate & Construction in Rawalpindi";
+const DESCRIPTION = `Buy, sell, rent, and build in ${SITE_LOCATION.area}, ${SITE_LOCATION.city}. Rayyan Real Estate & Builders offers local property expertise and construction services from one team.`;
+
+export const metadata: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+};
 
 export default function HomePage() {
   return (
-    <main className="mx-auto flex max-w-3xl flex-col gap-8 px-6 py-16">
-      <div>
-        <h1 className="text-3xl font-semibold">{SITE_BRAND}</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
-          {SITE_TAGLINE} &mdash; serving {SITE_LOCATION.area},{" "}
-          {SITE_LOCATION.city}. {SITE_SLOGAN}.
-        </p>
-      </div>
-
-      <div className="flex gap-3 text-sm font-medium">
-        {BRAND_QUICK_ACTIONS.map((action) => (
-          <span
-            key={action}
-            className="rounded-md border border-gray-300 px-3 py-1 dark:border-gray-700"
-          >
-            {action}
-          </span>
-        ))}
-      </div>
-
-      <div>
-        <h2 className="text-lg font-medium">Our Services</h2>
-        <ul className="mt-2 grid grid-cols-1 gap-1 text-gray-700 dark:text-gray-300 sm:grid-cols-2">
-          {CORE_SERVICES.map((service) => (
-            <li key={service}>{service}</li>
-          ))}
-        </ul>
-      </div>
-
-      <Link href="/contact" className="underline">
-        Contact us
-      </Link>
+    <main>
+      <Hero />
+      <TrustStrip />
+      <FeaturedProperties />
+      <PropertySearch />
+      <WhyRayyan />
+      <ConstructionServices />
+      <FeaturedProjects />
+      <AboutSplit />
+      <HowItWorks />
+      <LocalArea />
+      <BlogInsights />
+      <CtaSection />
     </main>
   );
 }

@@ -10,6 +10,21 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Public-site brand palette. Scoped in practice to app/(website)/ via
+     Tailwind utility classes (bg-navy, text-champagne, font-display, …) —
+     the admin dashboard keeps using the neutral tokens above. */
+  --color-navy: #0b1f33;
+  --color-navy-light: #14304d;
+  --color-ivory: #f7f4ee;
+  --color-ivory-dim: #efeade;
+  --color-champagne: #c8a96b;
+  --color-champagne-light: #ddc48f;
+  --color-site-slate: #667085;
+  --color-site-ink: #17202a;
+
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
